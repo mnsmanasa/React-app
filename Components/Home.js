@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { render } from 'react-dom';
+import Todo from "./Todo"
 
 class Home extends Component {
   constructor() {
@@ -9,7 +10,7 @@ class Home extends Component {
   }
 
   render() {
-    return <div>Home</div>
+    return <Fragment><Todo/></Fragment>
   }
 }
 

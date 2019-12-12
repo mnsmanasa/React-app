@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default () => <div>Contact</div>;
+export default () => <React.Fragment>Contact</React.Fragment>;

@@ -1,12 +1,30 @@
 import React, { Component, Fragment } from 'react';
 import { render } from 'react-dom';
+import TodoList from './TodoList';
 
 class Todo extends Component {
   constructor(){
     super();
     this.state= {
       todo: '',
-      error: false
+      error: false,
+      todoList: [
+        {
+          id: 1,
+          todoName: 'Todo 1',
+          completed: false
+        },
+        {
+          id: 2,
+          todoName: 'Todo 2',
+          completed: true
+        },
+        {
+          id: 3,
+          todoName: 'Todo 3',
+          completed: false
+        }
+      ]
     }
   }
 
@@ -16,7 +34,6 @@ class Todo extends Component {
   }
 
   handleSubmit = (e) => {
-    console.log(event.target)
     e.preventDefault()
     if(this.validateForm()){
       this.setState({todo: ''})
@@ -33,11 +50,14 @@ class Todo extends Component {
   }
 
   render(){
-    return <form onSubmit={this.handleSubmit}>
-      <input type="text" name="todo" value={this.state.todo} onChange={this.handleInputChange} />
-      <button>Add</button>
-      {this.state.error && <div className="error">Please enter todo item</div>}
-    </form>
+    return <Fragment>
+              <form onSubmit={this.handleSubmit}>
+                <input type="text" name="todo" value={this.state.todo} onChange={this.handleInputChange} />
+                <button>Add</button>
+                {this.state.error && <div className="error">Please enter todo item</div>}
+              </form>
+              <TodoList list={this.state.todoList}/>
+           </Fragment>
   }
 }
 

@@ -1,3 +1,22 @@
-h1, p {
+h1, p, body {
   font-family: Lato;
 }
+
+.header-container, a{
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items:center
+}
+a {
+  text-decoration: none;
+}
+header ul {
+  list-style-type: none;
+  display: inline-flex
+}
+ header ul li {
+   margin-left: 10px;
+ }

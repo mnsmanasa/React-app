@@ -35,8 +35,16 @@ class Todo extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    var addTodo = {
+      id: this.state.todoList.length+1,
+      todoName: this.state.todo,
+      completed: false
+    }
     if(this.validateForm()){
+      this.setState({todoList: [...this.state.todoList,addTodo]})
       this.setState({todo: ''})
+          console.log(this.state.todoList)
+
     }
   }
 

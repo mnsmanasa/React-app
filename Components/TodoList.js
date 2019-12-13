@@ -10,15 +10,14 @@ class TodoList extends Component {
     }
   }
 
-  handleCheckboxChange = (e) => {
+  handleTodoClick = () =>{
     
   }
-
   render() {
     return <ul>
               {this.state.list.map(item => 
               <Fragment key={item.id}>
-                <li><input type="checkbox" name={item.todoName} checked={item.completed} onChange={this.handleCheckboxChange}/>{item.todoName}</li>
+                <li onClick={this.handleTodoClick}>{item.todoName}</li>
               </Fragment>)}
            </ul>
   }

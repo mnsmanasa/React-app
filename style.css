@@ -14,13 +14,15 @@ a {
   text-decoration: none;
 }
 header ul {
-  list-style-type: none;
   display: inline-flex
 }
  header ul li {
    margin-left: 10px;
  }
-
+ul{
+    list-style-type: none;
+    padding-inline-start: 0
+}
 .wrapper{
   margin: 20px 0;
 }
